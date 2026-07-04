@@ -9,6 +9,8 @@ class Leave(models.Model):
         EARNED = "earned", "Earned Leave"
         UNPAID = "unpaid", "Unpaid Leave"
 
+
+    ## status Class
     class Status(models.TextChoices):
         PENDING = "pending", "Pending"
         APPROVED = "approved", "Approved"
