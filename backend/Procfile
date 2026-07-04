@@ -1,0 +1,2 @@
+web: gunicorn hrms.wsgi:application --chdir hrms --bind 0.0.0.0:$PORT --workers 3
+release: cd hrms && python manage.py migrate --noinput
