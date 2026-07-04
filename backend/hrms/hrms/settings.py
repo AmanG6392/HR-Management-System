@@ -174,7 +174,12 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     o.strip()
     for o in os.environ.get(
-        "CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://127.0.0.1:8000,http://localhost:8000,https://hr-management-system-alpha-six.vercel.app"
+        "CORS_ALLOWED_ORIGINS",
+        "http://localhost:5173,"
+        "http://127.0.0.1:5173,"
+        "http://127.0.0.1:8000,"
+        "http://localhost:8000,"
+        "https://hr-management-system-alpha-six.vercel.app"
     ).split(",")
     if o.strip()
 ]
@@ -182,9 +187,12 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     o.strip()
-    for o in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+    for o in os.environ.get(
+        "CSRF_TRUSTED_ORIGINS",
+        "https://hr-management-system-alpha-six.vercel.app"
+    ).split(",")
     if o.strip()
-] or CORS_ALLOWED_ORIGINS
+]
 
 # ---------------------------------------------------------------------------
 # Security (auto-hardens when DEBUG=False)
