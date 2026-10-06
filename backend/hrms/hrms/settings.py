@@ -172,9 +172,10 @@ SIMPLE_JWT = {
 # CORS
 # ---------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = [
-    o.strip()
+    o.strip().rstrip("/")   # also strips accidental trailing slashes
     for o in os.environ.get(
-        "CORS_ALLOWED_ORIGINS", "https://hr-management-system-alpha-six.vercel.app/,http://localhost:5173,http://127.0.0.1:5173"
+        "CORS_ALLOWED_ORIGINS",
+        "https://hr-management-system-alpha-six.vercel.app,http://localhost:5173,http://127.0.0.1:5173",
     ).split(",")
     if o.strip()
 ]
